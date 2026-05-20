@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AltarSMP</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: radial-gradient(circle at top, #111 0%, #000 70%);
+        color: white;
+        overflow-x: hidden;
+    }
+
+    /* Animated background glow */
+    .glow {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background: purple;
+        filter: blur(200px);
+        opacity: 0.2;
+        top: -200px;
+        left: -200px;
+        animation: move 10s infinite alternate;
+    }
+
+    @keyframes move {
+        0% { transform: translate(0,0); }
+        100% { transform: translate(200px,150px); }
+    }
+
+    header {
+        text-align: center;
+        padding: 120px 20px 60px;
+        position: relative;
+    }
+
+    h1 {
+        font-size: 70px;
+        letter-spacing: 3px;
+    }
+
+    .subtitle {
+        color: #bbb;
+        max-width: 700px;
+        margin: 20px auto;
+        font-size: 18px;
+    }
+
+    .buttons {
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 12px 18px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+    }
+
+    .primary {
+        background: white;
+        color: black;
+    }
+
+    .discord {
+        background: #5865F2;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        padding: 20px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(255,255,255,0.3);
+    }
+
+    .ip-box {
+        margin-top: 10px;
+        background: rgba(0,0,0,0.4);
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .copy {
+        background: white;
+        color: black;
+        border: none;
+        padding: 6px 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    footer {
+        text-align: center;
+        padding: 60px 20px;
+        margin-top: 60px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        color: #aaa;
+    }
+
+    @media(max-width:600px){
+        h1 { font-size: 45px; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<header>
+    <h1>AltarSMP</h1>
+    <p class="subtitle">
+        A competitive PvP Survival Multiplayer server where skill, strategy,
+        and alliances decide who dominates the world.
+    </p>
+
+    <div class="buttons">
+        <button class="btn primary" onclick="copy('AltarSMP.lets.game:25561')">Copy Java IP</button>
+        <button class="btn primary" onclick="copy('AltarSMP.lets.game')">Copy Bedrock IP</button>
+        <a class="btn discord" href="https://discord.gg/5rBCfsNbAX" target="_blank">Join Discord</a>
+    </div>
+</header>
+
+<div class="container">
+
+    <h2>Server Info</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Java Edition</h3>
+            <p>Best experience for PC players</p>
+
+            <div class="ip-box">
+                <span>AltarSMP.lets.game:25561</span>
+                <button class="copy" onclick="copy('AltarSMP.lets.game:25561')">Copy</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Bedrock Edition</h3>
+            <p>Mobile, console & Windows edition</p>
+
+            <div class="ip-box">
+                <span>AltarSMP.lets.game</span>
+                <button class="copy" onclick="copy('AltarSMP.lets.game')">Copy</button>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 style="margin-top:40px;">Features</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>⚔ PvP Focused</h3>
+            <p>Balanced combat system for competitive players.</p>
+        </div>
+
+        <div class="card">
+            <h3>💰 Economy</h3>
+            <p>Trade, earn, and build your empire.</p>
+        </div>
+
+        <div class="card">
+            <h3>🌍 SMP World</h3>
+            <p>Survival multiplayer with clans and wars.</p>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <h3>Join the Community</h3>
+    <p>Discord events, updates, and support</p>
+    <br/>
+    <a class="btn discord" href="https://discord.gg/5rBCfsNbAX" target="_blank">Discord Server</a>
+    <p style="margin-top:30px;">© AltarSMP</p>
+</footer>
+
+<script>
+function copy(text){
+    navigator.clipboard.writeText(text);
+
+    // small modern notification instead of alert
+    const div = document.createElement("div");
+    div.innerText = "Copied: " + text;
+    div.style.position = "fixed";
+    div.style.bottom = "20px";
+    div.style.left = "50%";
+    div.style.transform = "translateX(-50%)";
+    div.style.background = "#111";
+    div.style.border = "1px solid #333";
+    div.style.padding = "10px 15px";
+    div.style.borderRadius = "10px";
+    document.body.appendChild(div);
+
+    setTimeout(()=> div.remove(), 2000);
+}
+</script>
+
+</body>
+</html>
